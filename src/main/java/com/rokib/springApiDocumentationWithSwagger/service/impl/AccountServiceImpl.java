@@ -1,7 +1,7 @@
 package com.rokib.springApiDocumentationWithSwagger.service.impl;
 
-import com.rokib.springApiDocumentationWithSwagger.dto.accountManagement.signUp.deleteUser.command.deleteUserCommand;
 import com.rokib.springApiDocumentationWithSwagger.dto.accountManagement.signUp.SignUpCommand;
+import com.rokib.springApiDocumentationWithSwagger.dto.userManagement.deleteUser.DeleteUserCommand;
 import com.rokib.springApiDocumentationWithSwagger.mapper.contract.UserMapper;
 import com.rokib.springApiDocumentationWithSwagger.persistence.entity.User;
 import com.rokib.springApiDocumentationWithSwagger.persistence.repository.UserRepository;
@@ -25,7 +25,7 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    public void deleteUser(deleteUserCommand deleteUserCommand) {
+    public void deleteUser(DeleteUserCommand deleteUserCommand) {
         userRepository.deleteById(deleteUserCommand.getId());
     }
 

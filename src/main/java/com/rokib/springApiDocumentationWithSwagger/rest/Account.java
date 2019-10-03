@@ -1,7 +1,7 @@
 package com.rokib.springApiDocumentationWithSwagger.rest;
 
-import com.rokib.springApiDocumentationWithSwagger.dto.accountManagement.signUp.deleteUser.command.deleteUserCommand;
 import com.rokib.springApiDocumentationWithSwagger.dto.accountManagement.signUp.SignUpCommand;
+import com.rokib.springApiDocumentationWithSwagger.dto.userManagement.deleteUser.DeleteUserCommand;
 import com.rokib.springApiDocumentationWithSwagger.error.EntityNotFoundException;
 import com.rokib.springApiDocumentationWithSwagger.persistence.entity.User;
 import com.rokib.springApiDocumentationWithSwagger.service.contract.AccountService;
@@ -16,7 +16,7 @@ import javax.validation.Valid;
 import java.net.URI;
 
 @RestController
-@RequestMapping(path = "/rest/auth", produces = {"application/json"}, consumes = {"application/json"})
+@RequestMapping(path = "/rest/account", produces = {"application/json"}, consumes = {"application/json"})
 public class Account {
 
     @Autowired
@@ -45,7 +45,7 @@ public class Account {
     })
     @ResponseStatus(HttpStatus.NO_CONTENT) // ==> This is define to turn off default response messages
     @DeleteMapping(path = "/delete-user")
-    public ResponseEntity<?> deleteUser(@Valid @RequestBody deleteUserCommand deleteUserCommand) throws EntityNotFoundException {
+    public ResponseEntity<?> deleteUser(@Valid @RequestBody DeleteUserCommand deleteUserCommand) throws EntityNotFoundException {
         accountService.deleteUser(deleteUserCommand);
         return ResponseEntity.noContent().build();
     }

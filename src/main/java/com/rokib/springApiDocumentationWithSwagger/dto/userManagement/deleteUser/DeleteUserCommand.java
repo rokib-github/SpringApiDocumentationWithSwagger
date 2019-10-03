@@ -1,4 +1,4 @@
-package com.rokib.springApiDocumentationWithSwagger.dto.accountManagement.signUp.deleteUser.command;
+package com.rokib.springApiDocumentationWithSwagger.dto.userManagement.deleteUser;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -7,7 +7,7 @@ import javax.validation.constraints.NotNull;
 
 @Getter
 @Setter
-public class deleteUserCommand {
+public class DeleteUserCommand {
 
     @NotNull(message = "User id must not be null or empty")
     private Integer id;
